@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".fragments.TodoRecyclerItem"
+    android:padding="15dp"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="5dp"
+    android:backgroundTint="@color/good">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      >
+      <TextView
+          android:id="@+id/titleTextR"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="24dp"
+          android:textColor="@color/black"
+          android:padding="5dp"
+          tools:text="Title of the activity"
+          android:fontFamily="sans-serif"
+          android:backgroundTint="@color/good"
+          />
+      <TextView
+          android:id="@+id/descriptionTextR"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="20dp"
+          android:padding="10dp"
+          tools:text="welcome this is anther activity.."
+          android:fontFamily="sans-serif"
+          android:backgroundTint="@color/good"
+          />
+  </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+</layout>

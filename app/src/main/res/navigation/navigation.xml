@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigationgraph"
+    app:startDestination="@id/recycleViewListFragment">
+
+    <fragment
+        android:id="@+id/recycleViewListFragment"
+        android:name="com.varefree.tasker.fragments.RecycleViewListFragment"
+        android:label="RecycleViewListFragment" >
+        <action
+            android:id="@+id/action_recycleViewListFragment_to_viewTodoFragment"
+            app:destination="@id/viewTodoFragment" />
+        <action
+            android:id="@+id/action_recycleViewListFragment_to_createNewTodoFragment"
+            app:destination="@id/createNewTodoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createNewTodoFragment"
+        android:name="com.varefree.tasker.fragments.CreateNewTodoFragment"
+        android:label="CreateNewTodoFragment" />
+    <fragment
+        android:id="@+id/updateTodoFragment"
+        android:name="com.varefree.tasker.fragments.UpdateTodoFragment"
+        android:label="UpdateTodoFragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/viewTodoFragment"
+        android:name="com.varefree.tasker.fragments.ViewTodoFragment"
+        android:label="ViewTodoFragment" >
+        <action
+            android:id="@+id/action_viewTodoFragment_to_updateTodoFragment"
+            app:destination="@id/updateTodoFragment" />
+    </fragment>
+</navigation>
