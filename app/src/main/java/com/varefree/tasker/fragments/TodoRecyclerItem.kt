@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import com.varefree.tasker.R
 
 class TodoRecyclerItem : Fragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

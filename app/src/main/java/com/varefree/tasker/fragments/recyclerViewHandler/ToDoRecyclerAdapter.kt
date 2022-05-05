@@ -4,6 +4,7 @@ package com.varefree.tasker.fragments.recyclerViewHandler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.varefree.tasker.R
@@ -12,10 +13,9 @@ import com.varefree.tasker.TaskerViewModel.DummyData
 import com.varefree.tasker.localTransactions.LocalVM
 import org.w3c.dom.Text
 
-class ToDoRecyclerAdapter : RecyclerView.Adapter<ToDoRecyclerAdapter.ViewHolder>() {
+class ToDoRecyclerAdapter(val data:List<Tasker> ,val listner:onItemClickListner): RecyclerView.Adapter<ToDoRecyclerAdapter.ViewHolder>() {
 
     //var data = DummyData.dummyList
-    var data = LocalVM.getList()
 
     override fun getItemCount(): Int {
         return data.size
@@ -38,7 +38,7 @@ class ToDoRecyclerAdapter : RecyclerView.Adapter<ToDoRecyclerAdapter.ViewHolder>
     }
 
     //Inner class
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
         var titleView: TextView
         var desView :TextView
 
@@ -46,6 +46,19 @@ class ToDoRecyclerAdapter : RecyclerView.Adapter<ToDoRecyclerAdapter.ViewHolder>
         {
             titleView = itemView.findViewById(R.id.titleTextR)
             desView = itemView.findViewById(R.id.descriptionTextR)
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(p0: View?) {
+            var position = adapterPosition
+
+            if(position != RecyclerView.NO_POSITION)
+            {listner.onItemClick(position)}
+
         }
     }
+}
+
+interface onItemClickListner{
+    fun onItemClick(position: Int)
 }

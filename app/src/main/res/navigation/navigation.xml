@@ -31,5 +31,8 @@
         <action
             android:id="@+id/action_viewTodoFragment_to_updateTodoFragment"
             app:destination="@id/updateTodoFragment" />
+        <argument
+            android:name="taskerObject"
+            app:argType="com.varefree.tasker.Tasker"/>
     </fragment>
 </navigation>

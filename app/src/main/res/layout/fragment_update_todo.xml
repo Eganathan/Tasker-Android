@@ -9,33 +9,40 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp"
+    android:padding="15dp"
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center">
 
     <EditText
-        android:id="@+id/createTitle"
+        android:id="@+id/updateTitleET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Title"/>
+        android:hint="Title"
+        android:textSize="46dp"
+        android:layout_marginBottom="25dp"/>
 
     <EditText
-        android:id="@+id/createDescription"
+        android:id="@+id/updateDescriptionET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="24dp"
         android:hint="Description.."
+        android:layout_marginBottom="25dp"
         />
 
     <CheckBox
+        android:id="@+id/isCompleteCB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mark as complete"/>
+        android:text="Mark as complete"
+        android:layout_marginBottom="25dp"/>
     <Button
-        android:id="@+id/createAddBtn"
+        android:id="@+id/updateBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="update"/>
+        android:text="update"
+        android:backgroundTint="@color/danger"/>
 
 </LinearLayout>
 </FrameLayout>

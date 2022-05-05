@@ -41,19 +41,35 @@ object LocalVM {
     }
 
     //TODO OPTION TO SERACH WITH ID
-    fun searchWithID(ID: Long)
+    fun searchWithID(ID: Long):Tasker?
     {
+        for(task in taskerList)
+        {
+            if(task.ID === ID)
+                return task
+        }
+       return null
     }
 
     //TODO OPTION TO MARK COMPLETION
-    fun swithchCompletion(ID:Long)
-    {}
+    fun swithchCompletion(task:Tasker)
+    {
+        task.isCompleted = !task.isCompleted
+    }
 
     //TODO OPTION TO MODIFY CONTENT
-    fun updateContent(ID:Long, title:String, description:String)
-    {}
+    fun updateContent(task:Tasker, title:String, description:String,isCompleted:Boolean)
+    {
+        task.Title = title
+        task.Description = description
+        task.isCompleted = isCompleted
+    }
 
-    //TODO TEMP DEL/HIDE SWITCHING
+    //Recycler option
+    fun moveToRecycler(task:Tasker)
+    {
+        //TODO TEMP DEL/HIDE SWITCHING
+    }
 
     //TODO OPTION TO DELETE COMPLETLY
 
